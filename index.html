@@ -2,19 +2,45 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Login</title>
+  <title>Gestão de Entregas | Login</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="auth-body">
 
-<h2>Gestão de Entregas</h2>
+  <div class="login-container">
+    <div class="login-card">
+      <h1>Gestão de Entregas</h1>
+      <p class="subtitle">Acesso ao sistema</p>
 
-<form id="loginForm">
-  <input type="email" id="email" placeholder="Email" required />
-  <input type="password" id="password" placeholder="Senha" required />
-  <button type="submit">Entrar</button>
-</form>
+      <form id="loginForm">
+        <div class="field">
+          <input
+            type="text"
+            id="username"
+            placeholder="Usuário"
+            required
+            autocomplete="off"
+          />
+        </div>
 
-<script type="module" src="js/auth.js"></script>
+        <div class="field">
+          <input
+            type="password"
+            id="password"
+            placeholder="Senha"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn-primary">
+          Entrar
+        </button>
+      </form>
+
+      <span class="footer-text">© Nova Saúde • Sistema Interno</span>
+    </div>
+  </div>
+
+  <script type="module" src="js/auth.js"></script>
 </body>
 </html>

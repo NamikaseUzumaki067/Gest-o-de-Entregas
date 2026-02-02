@@ -6,16 +6,24 @@ if (form) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const email = document.getElementById("email").value;
+    const username = document
+      .getElementById("username")
+      .value
+      .trim()
+      .toLowerCase();
+
     const password = document.getElementById("password").value;
 
-    const { data, error } = await supabase.auth.signInWithPassword({
+    // 🔁 CONVERSÃO INTERNA
+    const email = `${username}@empresa.local`;
+
+    const { error } = await supabase.auth.signInWithPassword({
       email,
       password
     });
 
     if (error) {
-      alert("Login inválido");
+      alert("Usuário ou senha inválidos");
       return;
     }
 
