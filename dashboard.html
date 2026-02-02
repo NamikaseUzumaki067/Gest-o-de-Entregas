@@ -2,32 +2,24 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Gestão de Entregas | Painel</title>
+  <title>Gestão de Entregas | Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body class="app-body">
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <div class="logo">
-      <span class="logo-mini">GE</span>
-      <span class="logo-full">Gestão <strong>Entregas</strong></span>
+    <div class="sidebar-header">
+      <span class="logo-icon">GE</span>
+      <span class="logo-text">Gestão <strong>Entregas</strong></span>
     </div>
 
-    <nav class="menu">
-      <a href="#" class="active">
-        <span class="icon">📦</span>
-        <span class="text">Entregas</span>
-      </a>
-
-      <a href="#">
-        <span class="icon">👥</span>
-        <span class="text">Usuários</span>
-      </a>
-
-      <a href="#">
-        <span class="icon">📊</span>
-        <span class="text">Relatórios</span>
+    <nav class="sidebar-menu">
+      <a class="menu-item active">
+        <span class="menu-icon">📦</span>
+        <span class="menu-text">Dashboard</span>
       </a>
     </nav>
   </aside>
@@ -35,58 +27,19 @@
   <!-- MAIN -->
   <main class="main">
     <header class="header">
-      <span class="welcome">
-        Bem-vindo, <strong id="userName">Usuário</strong>
-      </span>
+      <strong>Últimas 5 Entregas</strong>
 
-      <button id="logout" class="btn-ghost">Sair</button>
+      <div class="header-actions">
+        <button class="btn-primary btn-create">Nova Entrega</button>
+        <button id="logout" class="btn-ghost">Sair</button>
+      </div>
     </header>
 
     <section class="content">
-      <div class="content-header">
-        <h2>Entregas</h2>
-        <button class="btn-primary">Nova Entrega</button>
-      </div>
-
-      <div class="card">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Destino</th>
-              <th>Status</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>São Paulo</td>
-              <td>
-                <span class="status pending">Pendente</span>
-              </td>
-              <td>
-                <button class="btn-small">Editar</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>2</td>
-              <td>Rio de Janeiro</td>
-              <td>
-                <span class="status route">Em rota</span>
-              </td>
-              <td>
-                <button class="btn-small">Editar</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <div id="deliveriesList" class="deliveries-grid"></div>
     </section>
   </main>
 
-  <script type="module" src="js/deliveries.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
